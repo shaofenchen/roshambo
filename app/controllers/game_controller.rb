@@ -5,16 +5,10 @@ before_filter :initThrow, :only  => [:throw, :begin]
  def initThrow
  #I make a mistake to use ruby 1.8.7, so the hash syntax is different from ruby 1.9, as shown below:
   @defeat = {:rock => :scissors, :paper => :rock, :scissors => :paper, :lizard => :spock,  :spock => :scissors}
-  @defeat2 = {:rock => :lizard,  :paper => :spock, :scissors => :lizard, :lizard => :paper, :spock => :rock}
+  @defeat2 = { :rock => :lizard, :paper => :spock, :scissors => :lizard, :lizard => :paper, :spock => :rock} 
   @throws = @defeat.keys
   @msg = ""
 end
-
-# before_filter do
-  # @defeat = {rock => :scissors, paper => :rock, scissors => :paper}
-  # @throws = @defeat.keys
-  # @computer_throw = @throws.sample
-# end
 
  def throw
   # the params[] hash stores querystring and form data.
