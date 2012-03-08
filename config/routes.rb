@@ -1,4 +1,16 @@
 Roshambo::Application.routes.draw do
+root :to => 'game#begin'
+  get "game/throw"
+
+  get "game/begin"
+
+  get "game/stat"
+
+   
+   match '/throw/:type' => 'game#throw'
+   match 'stats' => 'game#stat'
+   match 'stat' => 'game#stat'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
