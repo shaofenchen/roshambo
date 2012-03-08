@@ -12,7 +12,7 @@ describe GameController do
   describe "GET 'begin'" do
     it "should be successful" do
       get 'begin'
-      response.should be_success
+      response.should be_redirect
     end
   end
 
